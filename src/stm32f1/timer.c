@@ -27,20 +27,20 @@ union u32_u {
     uint32_t val;
 };
 
-static inline uint16_t
+static inline uint_fast16_t
 timer_get(void)
 {
     return LL_TIM_GetCounter(TIM2);
 }
 
 static inline void
-timer_set(uint16_t next)
+timer_set(uint_fast16_t next)
 {
     LL_TIM_OC_SetCompareCH1(TIM2, next);
 }
 
 static inline void
-timer_repeat_set(uint16_t next)
+timer_repeat_set(uint_fast16_t next)
 {
     LL_TIM_OC_SetCompareCH2(TIM2, next);
     LL_TIM_ClearFlag_CC2(TIM2);
